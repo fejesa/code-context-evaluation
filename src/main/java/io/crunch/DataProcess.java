@@ -1,5 +1,6 @@
 package io.crunch;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -27,7 +28,7 @@ public class DataProcess {
      *       whenever no suitable real station is available.</li>
      *   <li>Ignores queues that are currently inactive or empty.</li>
      *   <li>Ranks the remaining queues based on their throughput efficiency.</li>
-     *   <li>Selects up to three candidate queues that should be considered by the
+     *   <li>Selects up to two candidate queues that should be considered by the
      *       dispatcher.</li>
      * </ol>
      *
@@ -48,9 +49,7 @@ public class DataProcess {
      *     {@link AdditionalData} metrics; the key typically represents the
      *     loading station identifier used by the warehouse control system
      *
-     * @return
-     *     a new {@link LinkedHashMap} containing at most three prioritized queues,
-     *     ordered by their calculated processing efficiency
+     * @return a map
      */
     public Map<Long, AdditionalData> addData(Map<Long, AdditionalData> data) {
         var prepareAdditionalDataForResult = new PrepareAdditionalDataForResult();
@@ -66,7 +65,7 @@ public class DataProcess {
                         Map.Entry::getKey,
                         Map.Entry::getValue,
                         (a, b) -> a,
-                        LinkedHashMap::new
+                        HashMap::new
                 ));
     }
 }
