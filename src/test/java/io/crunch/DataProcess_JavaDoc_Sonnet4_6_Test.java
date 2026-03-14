@@ -8,7 +8,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DataProcess_Sonnet4_6_Test {
+class DataProcess_JavaDoc_Sonnet4_6_Test {
 
     private DataProcess dataProcess;
 
