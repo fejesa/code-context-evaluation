@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DataProcessTest {
+class DataProcess_Qwen_3_5_Test {
 
     private final DataProcess dataProcess = new DataProcess();
 
